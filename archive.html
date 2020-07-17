@@ -4,7 +4,6 @@ title: Archive
 ---
 
 <div>
-
   <h2>Archive</h2>
 
   <section class="archive_list">
@@ -13,6 +12,7 @@ title: Archive
     <div class="category-name">
       <h2>{{ category | first }}</h2>
     </div>
+
     {% for post in category.last %}
 
     <div class="post_title">
@@ -26,9 +26,6 @@ title: Archive
 
   </section>
 
-  <footer class="article-footer" mar>
-    {% include author.html %}
-  </footer>
 </div>
 
 
