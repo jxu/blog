@@ -1,34 +1,24 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jxu blog</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 
-<div class="home">
-  <div class="post-list">
+<body>
+<header>
+<h1 class="title">jxu blog</h1>
+</header>
+<ul>
+  <li><time>2023-01-05</time> <a href="downgrade.html">Blog Downgrade</a></li>
+  <li><time>2020-07-12</time> <a href="phone-youtube.html">Phone Youtube</a></li>
+  <li><time>2019-11-16</time> <a href="panopto.html">Downloading Panopto</a></li>
+  <li><time>2019-08-11</time> <a href="p10-again.html">Huawei P10 Again</a></li>
+  <li><time>2018-12-28</time> <a href="test.html">Test Post</a></li>
+  <li><time>2018-12-29</time> <a href="p10-unlocking.html">Huawei P10 Unlocking</a></li>
+</ul>
 
-    {% for post in site.posts limit:5%}
+</body>
 
-    <article class="post_card post">
-      <header class="post_header">
-        <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
-        <time class="post_date">{{ post.date | date: "%d %B %Y" }}</time>
-      </header>
-      <div class="post_excerpt">
-        <p>
-          {% if post.description %}
-          {{ post.description}}
-          {% else %}
-          {{ post.excerpt }}
-          {% endif %} 
-          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
-        </p> 
-      </div>
-      <footer class="post_meta">
-      </footer>
-      <hr/>
-    </article>
-    {% endfor %}
-
-    <div class="pagination older-post"><a href="./archive"> Archive  </a></div>
-  </div>
-</div>
+</html>
