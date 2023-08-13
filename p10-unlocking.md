@@ -1,11 +1,6 @@
----
-layout: post
-title:  Trying to Unlock and Install Custom ROM for Huawei P10 Lite
-category: phone
-description: It's never as easy as it looks on XDA. 
----
+# Trying to Unlock and Install Custom ROM for Huawei P10 Lite
 
-# Introduction
+## Introduction
 
 I've had my trusty Samsung Galaxy S5 for 4 years, but already by 2017 it was clear its time as my everyday phone was coming to an end. The screen was cracked even with a protective case, the AMOLED screen flickered bright green when the brightness was set too low, and the small piece of plastic covering the charging port broke off. In picking a new phone, I decided to get a different type of phone: while the Galaxy S5 had been a higher-end phone ($650 then, compare nowadays flagship phones from $700 to $1000), the Huawei P10 Lite is in the category of cheaper Android phones, with decent specs (definitely enough for everyday use) at a much lower price of about $250 at the time ($200 now).
 
@@ -16,7 +11,7 @@ In retrospect, this decision was marred by some annoyances: the pervasiveness of
 If I wanted a closed ecosystem, I would buy an iPhone; needless to say, I won't be buying another Huawei phone. Nonetheless, it was still an Android phone, and had the potential to support ROMs. 
 
 
-# Obtaining the Bootloader Code
+## Obtaining the Bootloader Code
 
 The first step is installing HiSuite and USB phone drivers. I don't know if this is strictly necessary, but I recall adb not seeing my device. HiSuite is a useless phone manager system, maybe akin to Samsung Kies. Native Linux support? Forget it. I also took a backup through HiSuite, though of course being the useless piece of software it is, that backup ended up not being able to be restored. 
 
@@ -28,7 +23,7 @@ The unlocking process is as follows: Type `*#*#2846579#*#*` into the dial pad an
 
 Now you can spend your 4 credits to receive the unlock code from DC Unlocker's server. The first time I tried this I got a server error and support was on winter holiday, but I tried it again the next day and I received my 16-digit unlock code, to my delight.
 
-# Flashing Recovery and ROM 
+## Flashing Recovery and ROM 
 
 The next step is to flash TWRP as recovery. This is done by first checking `adb devices` lists the phone as "device", not "unauthorized" (enable USB debugging through developer settings if necessary). Reboot into fastboot "FASTBOOT&RESCUE MODE" with `adb reboot bootloader` or by powering on the phone holding the power button + volume down. The real magic in unlocking the bootloader is done with `fastboot oem unlock [unlock code]`. Now the phone restarts and so usb debugging needs to be re-enabled. Installing [TWRP OpenKirin edition](https://forum.xda-developers.com/huawei-p9lite/development/twrp-t3588356) with `fastboot flast recovery twrp.img` worked like a charm. (This may have been the wrong TWRP. I elaborate on this later)
 
@@ -45,6 +40,6 @@ Fortunately, [KingOfMezi has a compilation of TWRP-flashable P10 Lite EMUI 5.1 f
 I was not satisfied with this reduced functionality. I still had full access to TWRP and fastboot so I could try more things. I eventually fixed all the functionality of the stock image by using KingOfMezi's custom TWRP he linked in the compilation page instead of OpenKirin's. Finally my phone was back to a stock state and fully usable, so a big thank you to him.
 
 
-# Conclusion
+## Conclusion
 
 I have not updated the build of stock EMUI or tried out any other ROMs since restoring to stock. I am experimenting with a refurbished Samsung Galaxy S8, which still holds up well in specs even as the flagship S9 is out. So in Samsung land it'll be back to Odin and Heimdall, however the US version which I got does not have an unlocked bootloader, which is very problematic (that is an adventure for a different post). I may switch phones to get a more ROM friendly and less Apple-ish manufacturer than Samsung, and keep the P10 Lite for now. My parents have expressed interest in having a secondary phone, and selling it on eBay currently will only net optimistically $100. With the new TWRP, I may still try to install a ROM. 

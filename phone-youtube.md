@@ -1,9 +1,4 @@
----
-layout: post
-title:  Using Youtube On My Phone
-category: phone
-description: No more ads!
----
+# Using Youtube On My Phone
 
 Youtube's app used to be my go-to for watching Youtube because the app seemed easier to use. However after an increase in very annoying ads and another UI change, I changed to watching Youtube on Firefox, which actually has most of the basic functionality of the app. Firefox is a nice browser that supports browser extensions, so I can use the well-known content blocker uBlock Origin. Seeing that "blocked since install" number is hugely satisfying. The most significant downside is the lack of 60 fps playback.
 

@@ -1,3 +1,5 @@
+# About
+
 Technical explorations on using a computer. Now 100% JavaScript free!
 One less site on the internet with tracking and CPU-wasting garbage.
 

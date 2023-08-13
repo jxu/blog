@@ -1,9 +1,4 @@
----
-layout: post
-title: Downloading Panopto Videos 
-category: coding
-description: Budget youtube-dl 
----
+# Downloading Panopto Videos 
 
 My university frequently uses Panopto for recording class lectures. This has its advantages, namely that the recording of the professor and the slides are synced up, and you can search through the video by individual slide. However there is no option to download videos like with youtube-dl (there is an [old PR from 2017](https://github.com/ytdl-org/youtube-dl/pull/13449)).
 
@@ -11,7 +6,7 @@ Since the video is playing in the browser, there must be a way to extract video 
 
 My first thought was to play through parts of the video and see what shows up in Chromium network analyzer. 
 
-![panopto network]({{ "assets/img/panopto_network.png" | relative_url }})
+![panopto network](panopto_network.png)
 
 After the initial flurry of activity downloading all the normal website stuff, the main data being downloaded were clearly chunks of video numbered in order, such as `00058.ts`. These are MPEG transport stream files, each about 1.1 MB. There are two video streams: one for recording and one for slides. Everything below that applies to one stream also applies to all others. To make sure I didn't miss anything, I dumped the network monitor resource loading list as a HAR file (JSON format) and looked through it manually. Along with the video stream data, there are M3U playlists that organize the chunks of video. Here is `master.m3u8` which points to the M3U playlist of each video resolution:
 
@@ -69,7 +64,7 @@ For recording there was only one error about timestamps but for screen there wer
 
 Here's a screenshot of the combined recording video, showing Professor Randal Bryant telling a class of new 213 students on their first day about the danger of out-of-bounds memory accesses.
 
-![panopto full video]({{ "assets/img/panopto_full_video.png" | relative_url }})
+![panopto full video](panopto_full_video.png)
 
 ---
 

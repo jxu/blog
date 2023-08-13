@@ -1,9 +1,4 @@
----
-layout: post
-title:  Quick Huawei P10 Lite Shenanigans 
-category: phone
-description: This again? 
----
+# Quick Huawei P10 Lite Shenanigans 
 
 Last winter I managed to unlock my Huawei P10 Lite's bootloader but failed to install any ROMs. Recently, I've finally decided to get a new phone (the full rationale to be detailed in a future post, but in essence Huawei and Huawei device users are in a pretty bad position in the US) and just to experiment I tried updating my phone again. My current phone is at build number WAS-LX3C605B176, Warsaw probably being the codename for the phone, LX3 meaning 1 or 2 SIM, Latin America variant, C605 being the region code for Columbia ([region code list](https://forum.xda-developers.com/showpost.php?p=67793629&postcount=4)), and presumably B176 the actual build number (details about naming in [Alexxxx1's dload method guide](https://forum.xda-developers.com/p10-lite/development/service-rom-b362-c432-upgrade-o-o-n-o-t3813946)). I don't remember the original build number of the phone, but since I used the extremely useful [KingOfMezi's EMUI 5.1 Firmware Compilation](https://forum.xda-developers.com/p10-lite/development/compilation-firmware-flasheables-huawei-t3736754) to unbrick my phone, I was stuck with the version he provided, which is B176, kernel built on Oct 9 2017 (again a huge thank you to KingOfMezi). 
 

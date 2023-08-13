@@ -1,8 +1,8 @@
 # Blog Downgrade
 
 Today I finally got around to downgrading my blog. I call it a
-\"downgrade\" because it\'s less modern looking, but I consider it a
-refresh stylistically as I prefer the \"old internet\" HTML 1.0 look.
+"downgrade" because it's less modern looking, but I consider it a
+refresh stylistically as I prefer the "old internet" HTML 1.0 look.
 The look is inspired by GNU manuals (actually, the GCC docs have
 slightly more styling).
 
