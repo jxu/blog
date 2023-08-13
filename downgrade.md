@@ -1,0 +1,23 @@
+# Blog Downgrade
+
+Today I finally got around to downgrading my blog. I call it a
+\"downgrade\" because it\'s less modern looking, but I consider it a
+refresh stylistically as I prefer the \"old internet\" HTML 1.0 look.
+The look is inspired by GNU manuals (actually, the GCC docs have
+slightly more styling).
+
+There was nothing really wrong with Jekyll, the previous static blog
+site generator. The only very minor gripes are that it required me
+installing Ruby, and the site layout files including SCSS took a little
+while to figure out. Now, I write my posts in pure HTML. There is no
+Ruby bundle exec and not even a Makefile. Most of it is text anyway with
+`<p>` tags. Working hands-on with raw HTML is a good learning experience
+in my view. (I always have a tab to MDN open.)
+
+Previously the blog was based on a theme called jekyll-simple by
+wild-flame. I already stripped out all the javascript from that theme,
+but it still was too professional-looking. The only use cases for JS I
+can imagine are MathJax or using a plugin for commenting, which no one
+will do anyway. MathJax can be rendered statically, like it is on old
+academic sites. I doubt I will be posting math on a blog, though, as
+most of that is reserved for Math Stack Exchange (MSE).
