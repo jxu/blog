@@ -1,0 +1,66 @@
+# Just render the markdown with pandoc and rename README -> index
+name: Deploy jxublog to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# GITHUB_TOKEN permissions required
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only allow one deployment workflow to run at once
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Render markdown to HTML and store it as an artifact
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup pandoc
+        uses: nikeee/setup-pandoc@v1
+        with:
+          pandoc-version: '2.19'
+      
+      - name: Get repository
+        uses: actions/checkout@v3
+
+      - name: Create artifact directory
+        run: mkdir _site
+
+      # sed command matches link text within [] followed by (name.md) and changes it to the link text followed by (name.html)
+      # if the extension is not md it will not be changed
+      - name: Replace md file links with html file links
+        run: >
+          find . -type f -name "*.md" -path ./_site -prune -exec sed -i 's/\(\[[^]]*\]\)(\([^)]\{1,\}\).md)/\1(\2.html)/' \{\} \;
+
+      # The substitution ${f%.*} fails in cases with directories containing a . in their name
+      # find-sh is a dummy argument
+      - name: Render markdown
+        run: >
+          find . -type f -name "*.md" -path ./_site -prune -exec bash -c 'for f do pandoc --standalone "$f" -o "_site/${f%.*}.html"; done' find-sh \{\} \+
+
+      - name: Copy resource files and fix file permissions
+        run: >
+          find . -type f -path ./_site -prune -not -name "*.md" -exec cp --parents \{\} _site/ \;
+          chmod -c -R +rX _site/ | awk '{ print "::warning title=Invaild file permissions automatically fixed::",$0}'
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2  
+
+  # Deploy the site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v2
