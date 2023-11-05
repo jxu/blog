@@ -47,7 +47,7 @@ jobs:
 
       - name: Copy resource files and fix file permissions
         run: >
-          find . -type f -path ./_site -prune -path ./.github -prune -path ./.git -prune -not -name "*.md" -not name ".*" -exec cp --parents \{\} _site/ \;
+          find . -type f -path ./_site -prune -path ./.github -prune -path ./.git -prune -not -name "*.md" -not -name ".*" -exec cp --parents \{\} _site/ \;
           chmod -c -R +rX _site/ | awk '{ print "::warning title=Invaild file permissions automatically fixed::",$0}'
 
       - name: Upload pages artifact
