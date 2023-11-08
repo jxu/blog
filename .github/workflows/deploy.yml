@@ -37,17 +37,17 @@ jobs:
       # if the extension is not md it will not be changed
       - name: Replace md file links with html file links
         run: >
-          find . -type f -name "*.md" -path ./_site -prune -exec sed -i 's/\(\[[^]]*\]\)(\([^)]\{1,\}\).md)/\1(\2.html)/' \{\} \;
+          find . -name _site -prune -o -name '*.md' -exec sed -i 's/\(\[[^]]*\]\)(\([^)]\{1,\}\).md)/\1(\2.html)/' \{\} \;
 
       # The substitution ${f%.*} fails in cases with directories containing a . in their name
       # find-sh is a dummy argument
       - name: Render markdown
         run: >
-          find . -type f -name "*.md" -path ./_site -prune -exec bash -c 'for f do pandoc --standalone "$f" -o "_site/${f%.*}.html"; done' find-sh \{\} \+
+          find . -name _site -prune -o -name '*.md' -exec bash -c 'for f do pandoc --standalone "$f" -o "_site/${f%.*}.html"; done' find-sh \{\} \+
 
       - name: Copy resource files and fix file permissions
         run: |
-          find . -type f -path ./_site -prune -path ./.github -prune -path ./.git -prune -not -name "*.md" -not -name ".*" -exec cp --parents \{\} _site/ \;
+          find . -name _site -prune -o -name .github -prune -o -name .git -prune -o \( -type f -not -name "*.md" -not -name ".*" \) -exec cp --parents \{\} _site/ \;
           chmod -c -R +rX _site/ | awk '{ print "::warning title=Invaild file permissions automatically fixed::",$0}'
 
       - name: Upload pages artifact
