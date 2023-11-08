@@ -46,7 +46,7 @@ jobs:
           find . -type f -name "*.md" -path ./_site -prune -exec bash -c 'for f do pandoc --standalone "$f" -o "_site/${f%.*}.html"; done' find-sh \{\} \+
 
       - name: Copy resource files and fix file permissions
-        run: >
+        run: |
           find . -type f -path ./_site -prune -path ./.github -prune -path ./.git -prune -not -name "*.md" -not -name ".*" -exec cp --parents \{\} _site/ \;
           chmod -c -R +rX _site/ | awk '{ print "::warning title=Invaild file permissions automatically fixed::",$0}'
 
