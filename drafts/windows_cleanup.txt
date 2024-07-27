@@ -1,0 +1,4 @@
+1. clean up recycle bin and use treesize free
+2. delete windows.edb (stop windows search service first)
+3. disable  startup services like nvidia streamer service using `msconfig` and delete old nvidia drivers (GeForce Experience)
+

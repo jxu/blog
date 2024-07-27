@@ -1,0 +1,2 @@
+- windows partition?
+- cleanup move p10 lite backup to external 

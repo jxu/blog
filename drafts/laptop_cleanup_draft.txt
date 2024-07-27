@@ -1,0 +1,30 @@
+Use baobab / Disk Usage Analyzer which immediatedly shows the biggest directories (apparently a more recent version shows large individual files https://gitlab.gnome.org/GNOME/baobab/-/issues/22)
+
+Trash: 116 GB (hundreds)
+accumulated over months of "maybe" needing some files, including manmy downloaded videos and large binaries. I deleted all of them.
+
+Videos:
+some class videos not uploaded to youtube moved to temp external hard drive to be deleted later once I verify none are needed.
+
+snaps: 12 GB 
+snap keeps two versions, probably for rollback purposes
+also different versions of gnome like 3.26, 3.28, etc are kept
+large snaps are several hundred megabytes
+maybe I will get rid of snap completely. for another blogpost
+
+nsight-compute and nsight-systems: /opt/nvidia 1.1 GB
+probably installed accidentally when I was messing with drivers
+
+cuda-11.3 samples which are just fun demos but not needed: 2.0 GB
+
+Old Mathematica 12.0 install in usr/local: 9.4 GB. Have new version installed. Half the size is documentation
+
+Note: root trash is different than user trash! this is shown by giving sudo permissions to baobab. 
+
+TexLive: https://tex.stackexchange.com/questions/119759/why-cant-tex-lives-size-be-reduced 
+I never use the docs because it's faster just to lookup things online such as on TeX stackexchange.
+https://askubuntu.com/questions/129566/remove-documentation-to-save-hard-drive-space
+
+texlive-full docs: 2.5 GB
+texmf-dist/fonts 2.3 GB
+
