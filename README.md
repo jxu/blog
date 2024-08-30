@@ -1,5 +1,6 @@
 # jxu blog
 
+-   2024-08-30 [Algorithms Book](clrs.md)
 -   2024-07-26 [Blog Un-downgrade](undowngrade.md)
 -   2023-01-05 [Blog Downgrade](downgrade.md)
 -   2020-07-12 [Phone Youtube](phone-youtube.md)
