@@ -1,0 +1,3 @@
+# Readability
+
+I consider my writing style to be pretty plain and understandable, but online readability scorers put my writing as high school to college level, that is "difficult" to "professional". My previous post about the CLRS book was universally considered difficult, due to the jargon and many-syllable words used. Aside from specific jargon, I am pretty sure a middle schooler could understand my writing reasonably well, even if it comes off as wordy. I try not to be wordy as ChatGPT is notorious for being, but also maintain an informal, conversational tone for the blog. My old writing had more very long sentences, even if not technically run-on, and in recent years I've consciously made my sentences shorter.
