@@ -1,5 +1,6 @@
 # jxu blog
 
+-   2024-09-03 [New Monitor](new_monitor.md)
 -   2024-09-02 [Readability](readability.md)
 -   2024-09-01 [Wake Me Up When September Ends](september.md)
 -   2024-08-30 [Algorithms Book](clrs.md)
