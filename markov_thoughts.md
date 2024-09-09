@@ -1,0 +1,3 @@
+# Markovian Thoughts
+
+In a typical day, I spend most of my time only thinking about a limited set of topics. Within these topics there's always new details, but broadly they are consistent. I've noticed this with my personal chats too; there are only so many things to talk about. That made me wonder if I could model my thoughts as a Hidden Markov Model. It's more likely what I think about is mainly dictated by what I come across in reading and daily life, and I'll think about a topic over a few days until I'm satisfied with it. 
