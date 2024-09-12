@@ -1,5 +1,7 @@
 # jxu blog
 
+-   2024-09-08 [x86 Golf](x86_golf.md)
+-   2024-09-07 [Markovian Thoughts](markov_thoughts.md)
 -   2024-09-06 [Automatic Backup Mirroring](auto_mirror.md)
 -   2024-09-05 [C Indent Styles](indent.md)
 -   2024-09-04 [Simpler Bash Prompt](bash_prompt.md)
