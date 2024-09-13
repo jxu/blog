@@ -14,7 +14,7 @@ This is fine, but one thing I've always disliked is that if I'm in a deep direct
 
 Plus, the hostname is redundant on my personal computer, as I know where I'm logged into. 
 
-I was inspired by Git Bash Shell on Windows(!) to start the command on a new line, always on the left. This makes it easier to visually keep track of the command history. Keeping the bold green working directory from the original prompt, I used https://bash-prompt-generator.org to generate a PS1 simplified as 
+I was inspired by Git Bash Shell on Windows(!) to start the command on a new line, always left-justified. This makes it easier to visually keep track of the command history. Keeping the bold green working directory from the original prompt, I used https://bash-prompt-generator.org to generate a PS1 simplified as 
 
     PS1='\[\e[32;1m\]\w\[\e[0m\]\n\$ '
 
