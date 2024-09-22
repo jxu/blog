@@ -1,5 +1,6 @@
 # jxu blog
 
+-   2024-09-18 [Modern Palimpsest](palimpsest.md)
 -   2024-09-08 [x86 Golf](x86_golf.md)
 -   2024-09-07 [Markovian Thoughts](markov_thoughts.md)
 -   2024-09-06 [Automatic Backup Mirroring](auto_mirror.md)
