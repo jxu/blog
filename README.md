@@ -1,5 +1,6 @@
 # jxu blog
 
+-   2024-10-17 [Installing CUDA](cuda_laptop.md)
 -   2024-09-30 [Awoken](awoken.md)
 -   2024-09-18 [Modern Palimpsest](palimpsest.md)
 -   2024-09-08 [x86 Golf](x86_golf.md)
