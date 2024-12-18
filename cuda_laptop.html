@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>jxu blog</title>
 <h1 id="installing-cuda-on-my-laptop">Installing CUDA On My Laptop</h1>
 <p>Recently I got interested in machine learning frameworks again, partly due to various projects at work and partly due to an old image classification challenge (based on determining if a caprine image is upside-down or not) I tried various CV methods on a few years ago. Most models I frequently use for work, like logistic regression and random forests, train quickly with sklearn on CPU. Deep neural networks are the only models that require GPU to train efficiently.</p>
 <p>Trying out <a href="https://keras.io/examples/vision/image_classification_from_scratch/">Keras Image classification from scratch</a>, it quickly became apparent that the tiny 1-core 3.5 GB RAM compute VM we have at work for each data scientist to do non-intensive tasks wasn’t going to cut it. It struggled with even just reading and filtering the image dataset. My personal Thinkpad (the P Series advertised as a “mobile workstation”) with 4 cores and 24 GB RAM was significantly faster, operating at about 25 sec per batch of 128 training images. This would still take an hour or two to run, which is fine, but I remembered picking my laptop specifically because its Nvidia Quadro M1200 (Mobile) could run CUDA.</p>
