@@ -1,5 +1,6 @@
 # jxu blog
 
+-   2025-04-16 [Python's Documentation Is Still Terrible](pydoc.md)
 -   2024-10-17 [Installing CUDA](cuda_laptop.md)
 -   2024-09-30 [Awoken](awoken.md)
 -   2024-09-18 [Modern Palimpsest](palimpsest.md)
