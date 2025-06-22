@@ -1,5 +1,6 @@
 # jxu blog
 
+-   2025-06-21 [Leap Seconds](leap.md)
 -   2025-05-28 [RasPi and Lil NAS](rpi.md)
 -   2025-04-16 [Python's Documentation Is Still Terrible](pydoc.md)
 -   2024-10-17 [Installing CUDA](cuda_laptop.md)

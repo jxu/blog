@@ -1,0 +1,33 @@
+# Leap Second
+
+> [NO leap second will be introduced at the end of June 2025. The last leap second was positive and WAS introduced in UTC at the end of December 2016.](https://web.archive.org/web/20250325193053/https://maia.usno.navy.mil/products/leap-second)
+
+Leap seconds throw a wrench into what is otherwise an intuitive and consistent time system.
+
+[A brief history of timekeeping (really fun read)](https://en.wikipedia.org/wiki/History_of_timekeeping_devices): at first, people used natural cycles such as days, months, and years, which was sufficient for most purposes, and things like candles, water clocks, and sandglasses for shorter periods. Later on in Medieval Europe mechanical clocks were developed, and precise timekeeping became more important for things like [marine navigation](https://en.wikipedia.org/wiki/Marine_chronometer) and [rail schedules](https://en.wikipedia.org/wiki/Railway_time). The [very best electro-mechanical pendulum clocks](https://en.wikipedia.org/wiki/Shortt%E2%80%93Synchronome_clock) were more accurate than the Earth's rotation itself, then quartz electronic clocks were invented that were magnitudes more precise, then atomic clocks which were further magnitudes more precise.
+
+Leap years are necessary because a year is not exactly 365 days, which was well-known by many ancient civilizations. This was already factored into the Julian calendar (introduced 45 BC) which is exactly 365¼ days long, and the Gregorian calendar (introduced 1582) introduced a further adjustment every three out of four centuries to make the day 365.2425 days long. It is still the international standard today (alongside special religious and cultural calendars).
+
+On the internet there seems to be a lot of confusion on why leap seconds are necessary. Many people, including me previously, thought it is just because the Earth's rotation isn't completely constant. [NIST has a good overview](https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs) on what a leap second is and why it is necessary (bold mine): 
+
+> A leap second is a second added to Coordinated Universal Time (UTC) in order to keep it synchronized with astronomical time. UTC is an atomic time scale, based on the performance of atomic clocks that are more stable than the Earth's rotational rate. Astronomical time (UT1), or mean solar time, is based on the rotation of Earth, which is irregular.
+>
+> There are two main reasons that cause leap seconds to occur. The first is that the duration of the atomic second was measured and defined by comparing cesium clocks to the Ephemeris Time (ET) scale, an obsolete time scale that defined the second as a fraction of the tropical year. The duration of the ephemeris second was slightly shorter than the mean solar second and this characteristic was passed along to the atomic second. **If the atomic second had been defined with respect to the mean solar second, it is likely that leap seconds would have been required much less frequently.** The second reason for leap seconds is that the speed of the Earth's rotation is not constant. It sometimes speeds up, and sometimes slows down, but when averaged over long intervals the trend indicates that it is gradually slowing. This gradual decrease in the rotational rate is causing the duration of the mean solar second to gradually increase with respect to the atomic second.
+
+Leap seconds are added inconsistently, roughly every 1.5 years or so on average and with only 6 month's notice, so any timekeeping system using strictly UTC has to keep a table of past added leap seconds. This is an obvious problem for systems like GPS satellites/telecommunication services and digital medical devices, and even for readily accessible systems this is a pain to maintain.
+
+It seems obvious to me that the priority should be for keeping the satellites and time systems running consistently, and the connection to solar time is secondary (and inexact anyway). 
+
+> Some proposals have been made to implement larger corrections like leap hours, which would occur much less often than leap seconds. Also, it has been suggested to stop corrections to UTC and publish the growing difference between UTC and UT1. The relatively small community that needs UT1 could then use the published values as a correction.
+
+In fact, in 2022, the International Bureau of Weights and Measures (BIPM), which is responsible for UTC, [voted to stop using leap seconds by 2035](https://phys.org/news/2022-11-global-timekeepers-vote-scrap.html). 
+
+> The head of BIPM's time department, Patrizia Tavella, told AFP that the "historic decision" would allow "a continuous flow of seconds without the discontinuities currently caused by irregular leap seconds".
+
+> But by 2035, the difference between atomic and astronomical time will be allowed to grow to a value larger than one second, Judah Levine, a physicist at the US National Institute of Standards and Technology, told AFP.
+>
+> "The larger value is yet to be determined," said Levine, who spent years helping draft the resolution alongside Tavella.
+>
+> Negotiations will be held to find a proposal by 2035 to determine that value and how it will be handled, according to the resolution.
+
+So the can is kicked down the road and the jury is still out on what to do in the long run. At least the leap minute will be the next next (or further) generation's problem.
