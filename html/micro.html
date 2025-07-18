@@ -2,118 +2,24 @@
 <meta charset=utf-8>
 <title>jxu blog</title>
 <h1 id="a-new-text-editor">A New Text Editor?</h1>
-<p>Ever since I was a wee lad experimenting with the terminal, the
-terminal text editor I have used is Vim. My first exposure may have been
-Git Bash for Windows and MinGW, where making a commit or trying an
-interactive rebase will by default open the mysterious program. It is a
-rite of passage to be confused, try Ctrl-C or Esc or q to quit, try to
-type something, and get frustrated, before having to look up how to
-force-quit the program with <code>:q!</code>. This is not a great first
-impression, but I quickly learned the bare minimum about inserting text
-and saving/quitting to be able to use Git.</p>
-<p>From thereon, my foray into the Linux world started with Ubuntu,
-where there is a friendly GUI text editor like Notepad in gedit, and I
-gradually picked up terminal commands and navigation. Over time, I
-learned about vim's visual and insert modes, yanking/pasting, search,
-search-and-replace, and the usual basic editor features just by looking
-up many things. I customized my editor by copying the popular <a
-href="https://github.com/amix/vimrc">amix/vimrc</a> found online and
-gradually tweaking the settings, learning exactly what each strangely
-named setting did. I installed some plugins that could do more syntax
-highlighting, run syntax checking and compiler checks, and even operate
-a mini file explorer. In college, the classes taught everyone to use vim
-or VS Code when SSHing into the school servers, and every linux machine
-I worked on (including AWS instances and RasPis) always had vim
-pre-installed and not emacs. It seemed like it would be my go-to
-terminal text editor forever.</p>
-<p>Along the way however, annoyances kept creeping in. Whether due to
-design or age, vim does many things idiosyncratically. All these
-complaints have workarounds, but some of my objection is on
-principle.</p>
+<p>Ever since I was a wee lad experimenting with the terminal, the terminal text editor I have used is Vim. My first exposure may have been Git Bash for Windows and MinGW, where making a commit or trying an interactive rebase will by default open the mysterious program. It is a rite of passage to be confused, try Ctrl-C or Esc or q to quit, try to type something, and get frustrated, before having to look up how to force-quit the program with <code>:q!</code>. This is not a great first impression, but I quickly learned the bare minimum about inserting text and saving/quitting to be able to use Git.</p>
+<p>From thereon, my foray into the Linux world started with Ubuntu, where there is a friendly GUI text editor like Notepad in gedit, and I gradually picked up terminal commands and navigation. Over time, I learned about vim's visual and insert modes, yanking/pasting, search, search-and-replace, and the usual basic editor features just by looking up many things. I customized my editor by copying the popular <a href="https://github.com/amix/vimrc">amix/vimrc</a> found online and gradually tweaking the settings, learning exactly what each strangely named setting did. I installed some plugins that could do more syntax highlighting, run syntax checking and compiler checks, and even operate a mini file explorer. In college, the classes taught everyone to use vim or VS Code when SSHing into the school servers, and every linux machine I worked on (including AWS instances and RasPis) always had vim pre-installed and not emacs. It seemed like it would be my go-to terminal text editor forever.</p>
+<p>Along the way however, annoyances kept creeping in. Whether due to design or age, vim does many things idiosyncratically. All these complaints have workarounds, but some of my objection is on principle.</p>
 <ul>
-<li>Why does vim have separate modes for editing text and
-navigating/selecting? Pratically every other editor, including vim's
-main rival emacs, doesn't. Is it <em>really</em> better? There must be
-time invested to learn and get used to it, and the purported
-productivity gains are limited by the fact that ironically most of my
-time is not spent actually text editing but thinking. I have to mentally
-context switch when going between vim and any other program on my
-computer, and have found myself typing <code>i</code> and
-<code>:q</code> by mistake in other programs. I believe it is not the
-right user design on principle.</li>
-<li>Why do I have to maintain an almost 100 line vimrc to get behavior
-every other editor has by default? Things like normal backspace and
-arrow key wrapping behavior.</li>
+<li>Why does vim have separate modes for editing text and navigating/selecting? Pratically every other editor, including vim's main rival emacs, doesn't. Is it <em>really</em> better? There must be time invested to learn and get used to it, and the purported productivity gains are limited by the fact that ironically most of my time is not spent actually text editing but thinking. I have to mentally context switch when going between vim and any other program on my computer, and have found myself typing <code>i</code> and <code>:q</code> by mistake in other programs. I believe it is not the right user design on principle.</li>
+<li>Why do I have to maintain an almost 100 line vimrc to get behavior every other editor has by default? Things like normal backspace and arrow key wrapping behavior.</li>
 <li>Why does vim litter my directories with swapfiles everywhere?</li>
-<li>Why do I have to install a plugin manager (Vundle) separately, and
-then find and install a bunch of plugins to get functionality text
-editors and IDEs have out-of-the-box?</li>
-<li>Why is <a
-href="https://stackoverflow.com/questions/11489428/how-can-i-make-vim-paste-from-and-copy-to-the-systems-clipboard">copy-paste
-to the system clipboard</a> so broken that I need to remap
-<code>"+y</code> and <code>:set paste</code> to get it to work properly?
-(And why is "yank" such a stupid name?)</li>
-<li>Why is much of how to do anything unintuitive and requires looking
-it up on Vim Wikia or Vim Stack Exchange? I view VS Code as
-over-engineered, but <em>sometimes</em> I can figure out how to change a
-setting without looking it up.</li>
-<li>Why is Vimscript so ugly? Emacs Lisp is niche, but at least it is
-based on a properly designed language (previously widely used in
-academic artifical intelligence, when that meant symbolic computation
-way before the recent AI fad.)*</li>
-<li>Do vim developers really believe I have the mental capacity to
-string together commands like <code>d2w</code>? (More like d2f!) I can
-barely remember anything I've just seen for more than a few seconds
-before I need to look at it again.</li>
+<li>Why do I have to install a plugin manager (Vundle) separately, and then find and install a bunch of plugins to get functionality text editors and IDEs have out-of-the-box?</li>
+<li>Why is <a href="https://stackoverflow.com/questions/11489428/how-can-i-make-vim-paste-from-and-copy-to-the-systems-clipboard">copy-paste to the system clipboard</a> so broken that I need to remap <code>"+y</code> and <code>:set paste</code> to get it to work properly? (And why is "yank" such a stupid name?)</li>
+<li>Why is much of how to do anything unintuitive and requires looking it up on Vim Wikia or Vim Stack Exchange? I view VS Code as over-engineered, but <em>sometimes</em> I can figure out how to change a setting without looking it up.</li>
+<li>Why is Vimscript so ugly? Emacs Lisp is niche, but at least it is based on a properly designed language (previously widely used in academic artifical intelligence, when that meant symbolic computation way before the recent AI fad.)*</li>
+<li>Do vim developers really believe I have the mental capacity to string together commands like <code>d2w</code>? (More like d2f!) I can barely remember anything I've just seen for more than a few seconds before I need to look at it again.</li>
 </ul>
-<p>This whole time I have been using the arrow keys for navigation
-instead of "hjkl", for which I've gotten flak from vim-using friends
-for. If it is superior design, it is on accident because because when
-Bill Joy created vi, the ADM-3A terminal he used had no arrow keys but
-arrows printed on hjkl. I prefer to use the keys on my keyboard designed
-for navigation, and they work in insert mode too, going back to the
-whole modal interface thing. (For the fuss about saving a second not
-having to change hand positions on the keyboard, using the escape key
-requires me to lift up my hand. Some people remap Esc to
-<code>jj</code>.)</p>
-<p>At the same time, throughout these years various beginner linux
-tutorials online have recommended GNU Nano as an alternative quick and
-barebones editor. It is very basic, but I've come to appreciate its
-user-friendliness. For one, it comes by default on many distros and
-lists all the common keyboard commands on the bottom of the screen, so
-you always have an immediate reference to how to save and exit (even if
-the shortcuts used are a bit weird). You can type normally and never
-have to distinguish between typing and navigation modes. With some
-fleshing out, nano could be very usable.</p>
-<p>All this has led to a desire for an alternate text editor, and the
-micro editor quickly came up as an alternative to try. As the name
-suggests, it is "somewhat of a successor to nano", although it is a
-completely independent project. It is easy to use and install, and
-operates as a single static binary with no dependencies, if you care
-about that sort of thing. It comes with sensible defaults. It uses
-common keybindings like Ctrl-c, Ctrl-v, Ctrl-s, etc. and works with the
-system clipboard out-of-the-box, which is kinda surreal for a terminal
-program. What impressed me was linting integration with GCC without
-having to setup anything. There's also a plugin system for plugins
-written in Lua. So far the auto-complete is only basic, but usable. I
-haven't dabbled with the plugins, but I am willing to put up with small
-issues because I can participate in an ecosystem that is actively in
-development.</p>
-<p>I've been test-driving micro for a few months now, and so far so
-good. However, I haven't decided to ditch vim completely, and that is
-solely because of Neovim. It's a WIP vim fork that addresses many of my
-complaints above, and more importantly it has the courage to add
-significant new features for vim for the sake of being more usable,
-instead of being stuck with decades-old crusty behavior. It has a better
-API, Lua plugins, and reasonable defaults. Most promising is the LSP
-client, because vim syntax checkers like YouCompleteMe and Syntastic are
-a pain to install. I may write a post about customizing Neovim in the
-future and if I can get it to be a satisfactory IDE.</p>
-<p>*I am also slightly biased towards Lisp, as I met Scott Fahlman who
-did a lot of early work on Common Lisp and he's a very nice guy. Every
-year on "Smiley Day" (September 19) he had a table on campus where the
-CS department would give out souvenirs and shirts with the smiley
-emoticon, as he's credited with being the inventor.</p>
+<p>This whole time I have been using the arrow keys for navigation instead of "hjkl", for which I've gotten flak from vim-using friends for. If it is superior design, it is on accident because because when Bill Joy created vi, the ADM-3A terminal he used had no arrow keys but arrows printed on hjkl. I prefer to use the keys on my keyboard designed for navigation, and they work in insert mode too, going back to the whole modal interface thing. (For the fuss about saving a second not having to change hand positions on the keyboard, using the escape key requires me to lift up my hand. Some people remap Esc to <code>jj</code>.)</p>
+<p>At the same time, throughout these years various beginner linux tutorials online have recommended GNU Nano as an alternative quick and barebones editor. It is very basic, but I've come to appreciate its user-friendliness. For one, it comes by default on many distros and lists all the common keyboard commands on the bottom of the screen, so you always have an immediate reference to how to save and exit (even if the shortcuts used are a bit weird). You can type normally and never have to distinguish between typing and navigation modes. With some fleshing out, nano could be very usable.</p>
+<p>All this has led to a desire for an alternate text editor, and the micro editor quickly came up as an alternative to try. As the name suggests, it is "somewhat of a successor to nano", although it is a completely independent project. It is easy to use and install, and operates as a single static binary with no dependencies, if you care about that sort of thing. It comes with sensible defaults. It uses common keybindings like Ctrl-c, Ctrl-v, Ctrl-s, etc. and works with the system clipboard out-of-the-box, which is kinda surreal for a terminal program. What impressed me was linting integration with GCC without having to setup anything. There's also a plugin system for plugins written in Lua. So far the auto-complete is only basic, but usable. I haven't dabbled with the plugins, but I am willing to put up with small issues because I can participate in an ecosystem that is actively in development.</p>
+<p>I've been test-driving micro for a few months now, and so far so good. However, I haven't decided to ditch vim completely, and that is solely because of Neovim. It's a WIP vim fork that addresses many of my complaints above, and more importantly it has the courage to add significant new features for vim for the sake of being more usable, instead of being stuck with decades-old crusty behavior. It has a better API, Lua plugins, and reasonable defaults. Most promising is the LSP client, because vim syntax checkers like YouCompleteMe and Syntastic are a pain to install. I may write a post about customizing Neovim in the future and if I can get it to be a satisfactory IDE.</p>
+<p>*I am also slightly biased towards Lisp, as I met Scott Fahlman who did a lot of early work on Common Lisp and he's a very nice guy. Every year on "Smiley Day" (September 19) he had a table on campus where the CS department would give out souvenirs and shirts with the smiley emoticon, as he's credited with being the inventor.</p>
 <pre><code>19-Sep-82 11:44    Scott E  Fahlman             :-)
 From: Scott E  Fahlman &lt;Fahlman at Cmu-20c&gt;
 
@@ -124,7 +30,4 @@ I propose that the following character sequence for joke markers
 Read it sideways.  Actually, it is probably more economical to mark
 things that are NOT jokes, given current trends.  For this, use  
 :-(</code></pre>
-<p>I guess a lot of his incredibly important pioneering work on computer
-science and artifical intelligence is overshadowed by being known more
-as the "emoticon guy". Still, I guess it is better as an academic to be
-famous for <em>something</em> than not be known for anything.</p>
+<p>I guess a lot of his incredibly important pioneering work on computer science and artifical intelligence is overshadowed by being known more as the "emoticon guy". Still, I guess it is better as an academic to be famous for <em>something</em> than not be known for anything.</p>

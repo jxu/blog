@@ -10,7 +10,7 @@ outfiles := $(patsubst $(postsdir)/%.md,$(htmldir)/%.html,$(infiles))
 $(htmldir)/%.html: $(postsdir)/%.md
 	mkdir -p $(htmldir)
 	# pandoc -s for standalone HTML
-	pandoc -f gfm $< -o - | \
+	pandoc -f gfm --wrap=none $< -o - | \
 	sed 's/\.md/\.html/g' | \
 	{ cat header.html && cat; } > $@
 	
