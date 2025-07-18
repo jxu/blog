@@ -11,6 +11,7 @@ $(htmldir)/%.html: $(postsdir)/%.md
 	mkdir -p $(htmldir)
 	# pandoc -s for standalone HTML
 	pandoc -f gfm $< -o - | \
-	sed 's/\.md/\.html/g' > $@
+	sed 's/\.md/\.html/g' | \
+	{ cat header.html && cat; } > $@
 	
 build: $(outfiles)
