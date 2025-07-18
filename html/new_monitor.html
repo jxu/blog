@@ -1,0 +1,28 @@
+<h1 id="new-monitor">New Monitor</h1>
+<p>A few months ago, I found out from my workplace's IT service desk
+that I could get a 24" monitor and laptop dock for free for working
+remotely. I had made do with my small work laptop's screen with heavy
+use of Alt-Tab, but it was a lot less eyestrain to use a reasonably
+sized monitor.</p>
+<p>A few days ago, I finally got around to doing the same for my
+personal ThinkPad. I have a ThinkPad dock I bought used for college a
+few years ago, so I hooked up an extra monitor and VGA cable that's been
+sitting in my basement. The dual-display worked out-of-the-box (not my
+2016 experience with KDE!), but the image sharpness seemed low. GNOME's
+fractional scaling didn't work and produced an unusable zoomed-in view.
+From a screen resolution detector website, I found out the screen was
+displaying at a device pixel ratio (DPR) of 1.25, so showing only
+1536x864 logical pixels, scaled up to 1920x1080 physical pixels. I
+remembered I had turned on "Large Text" Ubuntu Accessibility option for
+my laptop screen to make all the UI bigger, and that carried over to the
+new monitor. I turned it off, but then the UI was too small on both
+screens. In Gnome Tweaks, I adjusted their Scaling Factor to 1.20x,
+which makes the desktop UI bigger without changing the DPR.</p>
+<p>Some sharp text appeared very subtly smudged down the center of the
+screen, but this was an artifact of the monitor's VGA clock/focus being
+set incorrectly. <a
+href="http://www.lagom.nl/lcd-test/clock_phase.php">The Lagom LCD
+monitor test pages</a> will make any monitor issues immediate and even
+may cause the monitor to make weird noises. Just be sure you don't have
+the browser zoom set to 110% as I had, which throws off everything,
+including the browser's DPR.</p>

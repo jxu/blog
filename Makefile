@@ -1,11 +1,16 @@
 # Idea to turn building blog into make...
 # https://til.jakelazaroff.com/make/build-all-files-with-a-given-extension/
 
-INPUTS := $(wildcard *.md)
-OUTPUTS := $(patsubst %.md,%.html,$(INPUTS))
+postsdir := posts
+htmldir  := html
 
-%.html: %.md
-	pandoc $< -o $@
+infiles  := $(wildcard $(postsdir)/*.md)
+outfiles := $(patsubst $(postsdir)/%.md,$(htmldir)/%.html,$(infiles))
 
-build: $(OUTPUTS)
-	echo "done"
+$(htmldir)/%.html: $(postsdir)/%.md
+	mkdir -p $(htmldir)
+	# pandoc -s for standalone HTML
+	pandoc -f gfm $< -o - | \
+	sed 's/\.md/\.html/g' > $@
+	
+build: $(outfiles)

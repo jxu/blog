@@ -1,0 +1,77 @@
+<h1 id="raspi-and-lil-nas">RasPi and Lil NAS</h1>
+<p>Recently I remembered I had a Raspberry Pi Zero W I bought several
+years ago, before the whole chip shortage when the prices skyrocketed to
+GPU-levels of inflated. (Even before I never saw it at the supposed $10
+base price.) I set it up as a Pi-hole in 2023 for my home's local
+network, but it ended up being useless since it can't block youtube ads
+which come from the same domain, what a client-side extension like
+uBlock Origin can do.</p>
+<p>The Pi Zero itself is quite small and minimal, having only three thin
+inconvenient ports: USB power, USB micro-B, and mini-HDMI. All require
+an adapter, and the kit I bought had all of them. I couldn't find the
+HDMI one but I did dig up the micro-B cable. I believe when I first got
+the board, I used our home TV as an easy HDMI monitor and the one USB
+port for a keyboard to set up Raspbian.</p>
+<p>Here's some trivia: The chip is a <a
+href="https://elinux.org/RPi_Hardware#Components">Broadcom BCM2835</a>,
+a single-core 32-bit <a
+href="https://en.wikipedia.org/wiki/ARM11">ARM11</a> SoC with 512 MB RAM
+and integrated video core. This is actually the same chip as the
+original RPi 1 models, but clocked at 1 GHz instead of 700 MHz. I
+wondered how this 2012 chip compared to my Wii, which was released in
+2006. Its <a
+href="https://en.wikipedia.org/wiki/Broadway_(processor)">codename
+Broadway processor</a> was actually 32-bit PowerPC run at about 729 MHz,
+with a very measly 88 MB total RAM. It <a
+href="https://www.neogaf.com/threads/console-power-theoretical-peak-performances-in-flops-single-precision-floating-point-operations-per-second-fp32.1533438/">supposedly</a>
+had a theoretical peak of 8.8 CPU GFLOPS and 12.2 GPU GFLOPS. The RPi
+supposedly has <a
+href="https://boinc.bakerlab.org/rosetta/cpu_list.php">2.4 CPU
+GFLOPS</a> and <a
+href="https://github.com/hermanhermitage/videocoreiv/wiki/VideoCore-IV---BCM2835-Overview">24
+GPU GFLOPS</a> (where most of the compute power comes from), so in this
+very unscientific comparison beats the Wii, but not by much.</p>
+<p>The last time I used the RPi, pi-hole started up automatically on
+boot. I forgot which IP it used, so I used
+<code>nmap -p 22 --open 192.168.1.0/24</code> to find 192.168.1.201.
+Afterwards I found my browser had the pi-hole admin page in history, and
+(automatically set up?) rpi0w.local also works.</p>
+<p>Embarassingly, I also couldn't remember the password, and I tried a
+bunch. Fortunately, having physical access to Pi meant I could modify
+any file. I tried <a
+href="https://raspberrypi.stackexchange.com/questions/4409/how-do-i-change-recover-my-password">several
+methods</a> to avoid reinstalling the OS image. Editing
+<code>/etc/passwd</code> had no effect. Editing <code>cmdline.txt</code>
+with <code>init=/bin/sh</code> didn't work, but I probably mounted it
+wrong. Such a hack also unsurprisingly interfered with normal bootup.
+Funnily enough, copying my public key to
+<code>~/pi/.ssh/authorized_keys</code> worked fine and let me SSH in
+where I could reset the password.</p>
+<p>The original plan was to connect my external HDD via the USB port to
+use as a small backup server, or "Lil NAS" (with no redundancy itself).
+The external drive is mounted at <code>/mnt</code> but not setup to do
+so at boot yet. The downside is transfer speed is limited by rpi's
+wireless chip to about max 3 MB/s. The backup is only a latest sync of
+my home directory, so thanks to rsync only 2 GB needed to be transferred
+in the most recent sync.</p>
+<p>Ultimately I'm not satisfied with having a single drive for storage,
+as I've had one external drive fail on me in the past. Well, I
+idiotically kept it in my backpack for a while jostling and tumbling it
+around, but any drive, SSD or HDD, can randomly fail over time. The
+minimum safe solution is to have two drives, where one is a main storage
+server and the other is simply a backup copy. That would be a little bit
+complicated to setup and then monitor, as either two drives connected or
+buying a true home NAS.</p>
+<p>The safer/easier solution is to use cloud backup like AWS S3, which I
+trust has the competence to not lose my data. Their current pricing is
+$0.0023 per GB per month, so $2.3/mo for 100 GB or $23/mo for 1 TB. In
+theory S3 Glacier would be much cheaper for storage but much more
+expensive for retrieval, as it is intended for true archival stuff that
+will likely never be accessed again (Like my <a
+href="https://www.youtube.com/watch?v=FRP0MBNoieY">favorite ending scene
+of <em>Raiders of the Lost Ark</em></a>, where "top men" have the Holy
+Grail boxed up and sent to a massive military warehouse with millions of
+identical-looking boxes, never to be seen again.) There's also Google
+Drive with 100 GB for $2/mo and 2 TB for $10/mo, so probably the
+cheapest simple cloud solution. Of course local storage is cheaper in
+the long run. This will probably be covered in a future blog post.</p>
