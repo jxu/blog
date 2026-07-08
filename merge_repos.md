@@ -1,4 +1,4 @@
-# Merging git repos into a linear history
+# Merging Git Repos Into a Linear History
 
 Every once in a blue moon, I come up with a weird git situation where the standard git workflow is not enough.
 Usually, this is rewriting the author of one of my old Github repos because I changed my username ([back in 2018 when Github still allowed you to claim inactive usernames](https://github.com/orgs/community/discussions/23495#discussioncomment-14476959) - thankfully I didn't put it off any longer). 
