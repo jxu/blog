@@ -1,5 +1,6 @@
 # jxu blog
 
+-   2026-09-08 [Replacing Laptop SSD](ssd.md)
 -   2026-07-07 [Merging Git Repos Into a Linear History](merge_repos.md)
 -   2025-12-09 [Recovering a Crouton Backup](crouton.md)
 -   2025-06-21 [Leap Seconds](leap.md)

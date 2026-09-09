@@ -1,4 +1,4 @@
-# Replacing laptop SSD
+# Replacing Laptop SSD
 
 Several (now many) years ago, during a very hot summer spent in Pittsburgh for an internship[^1], my ThinkPad's SSD died one day due to *mysterious water damage*. I am certain it had to do with my desk being right in front of an air conditioner on full blast, with a water bottle covered in condensation next to the laptop. At first, my shell started reporting strange disk errors, an ominous sign. Then, upon reboot, the kernel failed to boot correctly, but I kept pressing on, trying to fix it with various boot settings. Only when I lifted up my laptop and liquid water dripped down did I realize something was seriously wrong. I immediately powered off the laptop, but it was too late. Since that fateful shutdown, the SSD never read again.
 
