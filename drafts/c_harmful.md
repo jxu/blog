@@ -1,0 +1,6 @@
+- strings as null-terminated char arrays
+- conflating array and pointer
+- int size
+- locale
+- void*
+- lack of data structures (rose bush)
